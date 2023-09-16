@@ -12,6 +12,7 @@ import {BrowserRouter, Routes,Route} from "react-router-dom";
 import AboutUs from "./Components/AboutUs";
 import Contact from "./Components/Contact";
 import Update from "./Components/Update";
+import Search from "./Components/Search";
 function App() {
   return (
       <BrowserRouter>
@@ -31,7 +32,7 @@ function App() {
                               <Route path="/aboutus" element={<AboutUs/>} />
                               <Route path="/contact" element={<Contact/>} />
                               <Route path="/update/:id" element={<Update/>} />
-
+                              <Route path="/search/:query" element={<Search/>} />
                       </Routes>
                   </Col>
 

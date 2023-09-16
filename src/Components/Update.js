@@ -1,7 +1,7 @@
 import React, {useState, Fragment, useEffect} from 'react';
 import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 import axios from 'axios';
-import base_url from "../api/bootapi";
+import {base_url} from "../api/bootapi";
 import {toast} from "react-toastify";
 import AllCourses from "./AllCourses";
 import {useLocation, useNavigate, useParams} from "react-router";

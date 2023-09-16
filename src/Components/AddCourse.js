@@ -2,8 +2,8 @@ import React, {useEffect} from 'react';
 import { Button,Container, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import {Fragment, useState} from "react";
 import axios from 'axios';
-import base_url from "../api/bootapi";
 import {toast} from "react-toastify";
+import {base_url} from "../api/bootapi";
 const AddCourse=()=>{
     const [course,setCourse]=useState({});
     const handleForm=(e)=>{
@@ -11,7 +11,7 @@ const AddCourse=()=>{
       postDataToForm(course);
       e.preventDefault();
       document.getElementById("addcourseform").reset();
-      setCourse({title:"",description:""});
+      setCourse({title:"",description:"",createdAt:"",rating:0});
     };
 
     const postDataToForm=(data)=>{
@@ -51,6 +51,21 @@ const AddCourse=()=>{
                     placeholder="Please enter description"
                     onChange={(e)=>{
                         setCourse({...course,description:e.target.value});
+                    }}
+                />
+            </FormGroup>
+            <FormGroup>
+                <Label for="rating">Rating:</Label>
+                <Input
+                    type="number"
+                    step="0.01"
+                    name="rating"
+                    min="0"
+                    max="5"
+                    id="rating"
+                    placeholder="Please enter rating"
+                    onChange={(e)=>{
+                        setCourse({...course,rating:e.target.value});
                     }}
                 />
             </FormGroup>

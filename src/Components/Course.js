@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, Button, CardTitle, CardBody, CardText } from 'reactstrap';
-import base_url from "../api/bootapi";
+import {base_url} from "../api/bootapi";
 import axios from 'axios';
 import {toast} from "react-toastify";
 import {useNavigate} from "react-router-dom";
@@ -24,6 +24,7 @@ const Course= ({course,update}) =>{
     <CardBody>
         <CardTitle>{course.title}</CardTitle>
         <CardText>{course.description}</CardText>
+        Rating:<CardText>{course.rating}</CardText>
         <Button color="danger" onClick={()=>deleteCourse(course.id)}>Delete</Button>
         <Button color="warning" onClick={()=>editCourse(course.id)}>Update</Button>
 
